@@ -1,0 +1,18 @@
+[package]
+name = "spase"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "*"
+bevy ={ version = "*", features = [
+	"multi-threaded",
+	"bevy_asset",
+	"bevy_audio",
+	"bevy_ui",
+	"bevy_text"
+] }
+
+[target.x86_64-pc-windows-msvc]
+linker = "rust-lld.exe"
+rustflags = ["-Zshare-generics=off"]
